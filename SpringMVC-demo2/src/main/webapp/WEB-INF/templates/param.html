@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Parameter</title>
+</head>
+<body>
+    <h1>Parameter</h1>
+
+    <a th:href="@{/testparam/httpServletRequest(username='zs', password='123')}">
+        /testparam/httpServletRequest(username='zs', password='123') --GET--> success.html
+    </a><br/>
+    <a th:href="@{/testparam/requestParam(username='zhangsan', password='123456')}">
+        /testparam/requestParam(username='zhangsan', password='123456') --GET--> success.html
+    </a><br/>
+    <a th:href="@{/testparam/paramHeaderCookie(username='zhangsan', password='123456')}">
+        /testparam/paramHeaderCookie(username='lisi', password='123456') --GET--> success.html
+    </a><br/>
+</body>
+</html>

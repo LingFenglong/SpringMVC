@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>HOME PAGE</h1>
+    <a th:href="@{/user/success}">/user/success --> success.html</a><br/>
+
+    <a th:href="@{/success1}">/success1 --> success.html</a><br/>
+    <a th:href="@{/success2}">/success2 --> success.html</a><br/>
+
+    <a th:href="@{/methodget}">/methodget --GET--> success.html</a><br/>
+    <form th:action="@{/methodpost}" method="get">
+        <input type="submit" value="/methodpost --GET--> success.html  FAIL"/>
+    </form>
+    <form th:action="@{/methodpost}" method="post">
+        <input type="submit" value="/methodpost --POST--> success.html"/>
+    </form>
+
+    <a th:href="@{/params}">/params --GET--> success.html  FAIL</a><br/>
+    <a th:href="@{/params(username='zs', password='123')}">/(username='zs', password='123') --GET--> success.html</a><br/>
+
+    <a th:href="@{/ant}">"/ant", "/a?t", "/a*t" --GET--> success.html</a><br/>
+    <a th:href="@{/rest/zhangsan/123456}">/rest/zhangsan/123456 --GET--> success.html</a><br/>
+</body>
+</html>
