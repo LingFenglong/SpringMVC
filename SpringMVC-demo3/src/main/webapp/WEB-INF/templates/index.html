@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1>首页</h1>
+    <a th:href="@{/testServletAPI}">/testServletAPI    "testRequestScope" -> "Hello, ServletAPI"</a><br/>
+    <a th:href="@{/testModelAndView}">/testModelAndView    "testRequestScope" -> "Hello, ModelAndView"</a><br/>
+    <a th:href="@{/testModel}">/testModel    "testRequestScope" -> "Hello, Model"</a><br/>
+    <a th:href="@{/testMap}">/testMap    "testRequestScope" -> "Hello, Map"</a><br/>
+    <a th:href="@{/testModelMap}">/testModelMap    "testRequestScope" -> "Hello, ModelMap"</a><br/>
+    <br/>
+    <a th:href="@{/testSession}">/testSession    "testSessionScope" -> "Hello, Session"</a><br/>
+    <br/>
+    <a th:href="@{/testApplication}">/testApplication    "testApplicationScope" -> "Hello, Application"</a><br/>
+</body>
+</html>
