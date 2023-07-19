@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:in="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1>首页</h1>
+    <form th:action="@{/testRequestBody}" method="post">
+        name: <input type="text" name="name"><br/>
+        age: <input type="text" name="age"><br/>
+        <input type="submit" value="testRequestBody">
+    </form>
+
+    <br/><br/><br/>
+
+    <a th:href="@{/testRequestEntity(name = 'ling', age = 19)}">/testRequestEntity(name = 'ling', age = 19)}</a>
+    <form th:action="@{/testRequestEntity}" method="post">
+        name: <input type="text" name="name"><br/>
+        age: <input type="text" name="age"><br/>
+        <input type="submit" value="testRequestEntity">
+    </form>
+
+    <br/><br/><br/>
+
+    <a th:href="@{/testResponseBody}">/testResponseBody</a>
+</body>
+</html>

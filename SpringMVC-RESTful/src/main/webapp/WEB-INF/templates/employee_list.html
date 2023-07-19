@@ -14,7 +14,7 @@
             <th>last name</th>
             <th>email</th>
             <th>gender</th>
-            <th>options</th>
+            <th>options (<a th:href="@{/toAdd}">添加</a>)</th>
         </tr>
         <tr th:each="employee : ${employees}">
             <td th:text="${employee.id}">null</td>
@@ -22,24 +22,27 @@
             <td th:text="${employee.email}">null</td>
             <td th:text="${employee.gender}">null</td>
             <td>
-                <a id="deleteLink" th:href="@{'/employee/' + ${employee.id}}">delete</a>
+                <a class="deleteLink" th:href="@{'/employee/' + ${employee.id}}">delete</a>
                 <br/>
-                <a href="">update</a>
+                <a th:href="@{'/employee/' + ${employee.id} + '/employee_update'}">update</a>
             </td>
         </tr>
     </table>
 
-    <form method="post">
+    <form id="deleteForm" method="post">
         <input type="hidden" name="_method" value="delete"/>
     </form>
 </body>
     <script>
-        let deleteLink = document.getElementById("deleteLink")
-        deleteLink.addEventListener('click', function (event) {
-            deleteLink.preventDefault
-            deleteLink.action = event.target.href
-            deleteLink.submit
-        })
+        let deleteLink = document.getElementsByClassName("deleteLink")
+        for (let link of deleteLink) {
+            link.addEventListener('click', function (event) {
+                let deleteForm = document.getElementById("deleteForm");
+                deleteForm.action = event.target.href
+                deleteForm.submit()
+                event.preventDefault()
+            })
+        }
 
     </script>
 </html>

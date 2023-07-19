@@ -5,9 +5,8 @@ import com.lingfenglong.mvc.dao.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -21,9 +20,8 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/employee", method = RequestMethod.GET)
-    public String getALlEmployee(Model model) {
+    public String getAllEmployee(Model model) {
         Collection<Employee> employees = employeeDao.getAll();
-        employees.forEach(System.out::println);
         model.addAttribute("employees", employees);
         return "employee_list";
     }
@@ -31,6 +29,30 @@ public class EmployeeController {
     @RequestMapping(value = "/employee/{id}", method = RequestMethod.DELETE)
     public String deleteEmployee(@PathVariable("id") Integer id) {
         employeeDao.delete(id);
-        return "redirect:/employee_list";
+        return "redirect:/employee";
     }
+    @PostMapping(value = "/employee")
+    public String addEmployee(Employee employee) {
+        employeeDao.save(employee);
+        return "redirect:/employee";
+    }
+
+    @GetMapping("/employee/{id}/{path}")
+    public String getEmployeeById(@PathVariable("id") Integer id,
+                                  @PathVariable(value = "path", required = false) String path,
+                                  Model model) {
+        model.addAttribute("employee", employeeDao.get(id));
+        if (StringUtils.hasText(path)) {
+            return path;
+        } else {
+            return "redirect:/index";
+        }
+    }
+
+    @PutMapping("/employee")
+    public String updateEmployee(Employee employee) {
+        employeeDao.save(employee);
+        return "redirect:/employee";
+    }
+
 }

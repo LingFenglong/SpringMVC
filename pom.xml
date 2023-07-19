@@ -12,6 +12,7 @@
         <module>SpringMVC-demo1</module>
         <module>SpringMVC-demo2</module>
         <module>SpringMVC-demo3</module>
+        <module>SpringMVC-demo4</module>
     </modules>
 
     <properties>
@@ -48,6 +49,18 @@
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf-spring6</artifactId>
             <version>3.1.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version>
         </dependency>
     </dependencies>
 
