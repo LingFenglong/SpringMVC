@@ -29,6 +29,12 @@
     </bean>
 
     <mvc:view-controller path="/" view-name="index"/>
+    <mvc:view-controller path="/fileUploadAndDownload" view-name="file_upload_and_download"/>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+
+
+    <mvc:default-servlet-handler/>
 
     <mvc:annotation-driven/>
 

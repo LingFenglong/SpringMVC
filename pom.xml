@@ -13,6 +13,7 @@
         <module>SpringMVC-demo2</module>
         <module>SpringMVC-demo3</module>
         <module>SpringMVC-demo4</module>
+        <module>SpringMVC-demo5</module>
     </modules>
 
     <properties>
@@ -62,6 +63,7 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.15.2</version>
         </dependency>
+
     </dependencies>
 
 </project>

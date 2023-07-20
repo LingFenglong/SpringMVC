@@ -37,6 +37,12 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:springMVC.xml</param-value>
         </init-param>
+        <multipart-config>
+            <location>/</location>
+            <max-file-size>102400000000</max-file-size>
+            <max-request-size>102400000000</max-request-size>
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
     </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
