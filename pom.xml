@@ -14,6 +14,7 @@
         <module>SpringMVC-demo3</module>
         <module>SpringMVC-demo4</module>
         <module>SpringMVC-demo5</module>
+        <module>SpringMVC-Annotation</module>
     </modules>
 
     <properties>

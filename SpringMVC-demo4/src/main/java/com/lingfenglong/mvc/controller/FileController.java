@@ -30,7 +30,7 @@ public class FileController {
         System.out.println("fileName: " + fileName);
 
         Resource resource = new ServletContextResource(session.getServletContext(), "/static/userfile/" + fileName);
-        resource.getContentAsByteArray()
+        byte[] bytes = resource.getContentAsByteArray();
 
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + resource.getFilename());

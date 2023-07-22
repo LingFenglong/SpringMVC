@@ -43,4 +43,13 @@
             <bean class="com.lingfenglong.mvc.interceptor.FirstInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.ArithmeticException">error</prop>
+            </props>
+        </property>
+        <property name="exceptionAttribute" value="ex"/>
+    </bean>
 </beans>
